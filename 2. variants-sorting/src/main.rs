@@ -7,22 +7,44 @@ enum Variants {
     String(String),
 }
 
+fn is_string_numeric(str: String) -> bool {
+
+    let mut dot_count = 0;
+
+    for c in str.chars() {
+        if !c.is_numeric() && c != '.' {
+            return false;
+        }
+
+        if c == '.' {
+            dot_count += 1;
+        }
+    }
+
+    if dot_count > 1 {
+        return false;
+    }
+
+    true
+}
+
 fn main() {
 
     let mut input_list: Vec<Variants> = Vec::new();
 
-    for _i in 0..10 {
+    println!("{}", 5.0 % 2.0);
 
+    for _i in 0..10 {
         println!("정수 또는 실수 또는 문자열 입력.");
 
         let mut input = String::new();
         stdin().read_line(&mut input).unwrap();
         let input = input.trim();
 
-        if input.contains(char::is_numeric) {
+        if is_string_numeric(input.to_string()) {
             let input: f64 = input.parse().unwrap();
 
-            if input % 2.0 == 0.5 || input % 2.0 == 0.0 {
+            if input % 2.0 == 0.5 || input % 2.0 == 0.0 || input % 2.0 == 1.0 {
                 let input: i32 = input as i32;
                 input_list.push(Variants::Integer(input));
 
