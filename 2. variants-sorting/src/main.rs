@@ -32,8 +32,6 @@ fn main() {
 
     let mut input_list: Vec<Variants> = Vec::new();
 
-    println!("{}", 5.0 % 2.0);
-
     for _i in 0..10 {
         println!("정수 또는 실수 또는 문자열 입력.");
 
