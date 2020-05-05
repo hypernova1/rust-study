@@ -15,7 +15,6 @@ fn is_string_numeric(str: String) -> bool {
         if !c.is_numeric() && c != '.' {
             return false;
         }
-
         if c == '.' {
             dot_count += 1;
         }

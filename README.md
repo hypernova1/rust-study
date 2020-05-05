@@ -9,3 +9,20 @@
      키보드로 부터 정수, 실수, 문자열을 입력 받아 10개 를 저장하고
      정수끼리 구룹지어 소팅하고, 실수끼리 그룹지어 소팅하고, 문자열 끼리 그룹지어 소팅하여
      화면에 출력하는 프로그램을 작성해 보세요
+
+3. > AStruct라는 객체를 사용하여 T로 i32와 f64, String을 사용하며,
+     키보드 인풋으로 key와 정수 또는  실수 또는 문자열을 입력받아서
+     열거형 Value에 저장하고, key에 따라 정렬하고, 출력하는
+     프로그램을 작성하세요.
+     그리고
+     AStruct로 ShowValue를 구현하세요,
+     show_value는 구조체의 value필드를 String에 찍어주는 기능으로 하세요.
+     ~~~rust
+     pub trait ShowValue {
+          fn show_value(&self) -> String;
+     }
+     struct AStruct<T> {
+          key: &str,
+          value: &Value<T>,
+     }
+     ~~~
